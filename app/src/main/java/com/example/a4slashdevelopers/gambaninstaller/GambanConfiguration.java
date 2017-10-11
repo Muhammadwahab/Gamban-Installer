@@ -41,7 +41,7 @@ public class GambanConfiguration extends AppCompatActivity {
         protected Object doInBackground(Object[] objects) {
             loadFile("http://110.37.231.10:8080/projects/wahab_download_test/dns.apk");
 
-
+  //sdsdsds
 
             // loadFile("http://sirius.androidapks.com/sdata/bf77952865b725cd4b1fa2c54b057bc9/com.facebook.lite_v60.0.0.5.140-72097660_Android-2.3.apk");
             return objects;
