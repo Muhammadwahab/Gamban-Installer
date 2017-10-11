@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             postDailog();
         else if (view.getId()== keyButton.getId())
         {
-            new downloadFile().execute();
-            // validationProcess();
+
+             validationProcess();
         }
 
 
@@ -437,15 +437,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             URL u = new URL(url);
             URLConnection conn = u.openConnection();
 
-//            // writing file Start
-//            String PATH = Environment.getExternalStorageDirectory() + "/download/";
-//            File file = new File(PATH);
-//            file.mkdirs();
-//            File outputFile = new File(file, "wahab.apk");
-            // FileOutputStream fos = new FileOutputStream(outputFile);
-
-            //    FileOutputStream fout = openFileOutput("wahab.apk", Context.MODE_WORLD_READABLE);
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 naogatRead(conn);
             }
@@ -453,18 +444,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 marshmallow(conn);
 
             }
+            else  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                // kit kat and marshmallow are same
+                marshmallow(conn);
 
+            }
+            else  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                // kit kat and marshmallow and lollipop are same
+                marshmallow(conn);
 
-
-
-
+            }
 
 
             // Complete Read Apk from file Directory
 
 
             //till here, it works fine - .apk is download to my sdcard in download file
-
 
 //
         } catch(FileNotFoundException e) {
