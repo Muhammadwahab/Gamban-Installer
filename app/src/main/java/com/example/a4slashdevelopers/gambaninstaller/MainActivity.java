@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         keyButton.setOnClickListener(this);
         keyText.setOnTouchListener(this);
 
+
+        File dir=getFilesDir();
+        File file=new File(dir+"/debugKey.txt");
+        if (file.exists())
+        {
+           startActivity(new Intent(MainActivity.this,ProtectedScreen.class));
+        }
+
 //        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
 //        StrictMode.setVmPolicy(builder.build());
     }
@@ -159,7 +167,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // this
                 // store key in file
                 // storeInFile();
-                new downloadFile().execute();
+                startActivity(new Intent(MainActivity.this,GambanConfiguration.class).putExtra("KEY",keyText.getText().toString().trim()));
+               // new downloadFile().execute();
                 break;
             case UTILITY.EXPIRED:
                 // this
@@ -213,9 +222,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            progress.show();
         }
     }
-
-
-
 
     private void naogatRead(URLConnection conn) throws IOException {
         File file = new File(getFilesDir(),"wahab.apk");

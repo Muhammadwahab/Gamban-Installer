@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GamBan Installer</string>
+    <string name="app_name">gamban</string>
     <string name="invalid_key">invalid key</string>
     <string name="Pretected_Status">You Are now Protected by </string>
 
