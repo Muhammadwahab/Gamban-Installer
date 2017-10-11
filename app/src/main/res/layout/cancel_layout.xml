@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#faf7d1"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/warningtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="ARE YOU SURE. DO YOU WANT TO EXIT"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/yesId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:text="YES"
+        android:layout_below="@+id/warningtext"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/noID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:layout_toEndOf="@+id/yesId"
+        android:layout_alignTop="@+id/yesId"
+        android:layout_alignBottom="@+id/yesId" />
+
+</RelativeLayout>
+
